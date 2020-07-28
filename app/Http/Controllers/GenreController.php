@@ -2,22 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
-use Exception;
-use Illuminate\Database\Eloquent\Collection;
+use App\Genre;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-class UserController extends Controller
+class GenreController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return User[]|Collection
+     * @return Response
      */
     public function index()
     {
-        return User::all();
+        //
     }
 
     /**
@@ -28,45 +26,40 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        return response(User::create($request->input()));
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param User $user
-     * @return User
+     * @param Genre $genre
+     * @return Response
      */
-    public function show(User $user)
+    public function show(Genre $genre)
     {
-        return $user;
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param Request $request
-     * @param User $user
-     * @return User
+     * @param Genre $genre
+     * @return Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, Genre $genre)
     {
-        $user->update($request->input());
-
-        return $user;
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param User $user
+     * @param Genre $genre
      * @return Response
-     * @throws Exception
      */
-    public function destroy(User $user)
+    public function destroy(Genre $genre)
     {
-        $user->delete();
-
-        return response(null, 204);
+        //
     }
 }
