@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Factory;
 
 $factory->define(Publisher::class, function (Faker $faker) {
     return [
-        //
+        'name' => $faker->word()
     ];
 });

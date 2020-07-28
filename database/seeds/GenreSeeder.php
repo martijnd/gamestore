@@ -1,5 +1,7 @@
 <?php
 
+namespace Seeders;
+
 use Illuminate\Database\Seeder;
 
 class GenreSeeder extends Seeder

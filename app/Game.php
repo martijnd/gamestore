@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Game extends Model
 {
     protected $fillable = [
-        'title',
+        'name',
         'genre_id',
         'company_id',
         'publisher_id',
@@ -22,7 +22,7 @@ class Game extends Model
      */
     public function genre()
     {
-        return $this->belongsTo('App/Genre');
+        return $this->belongsTo('App\Genre');
     }
 
     /**
@@ -31,7 +31,7 @@ class Game extends Model
      */
     public function company()
     {
-        return $this->belongsTo('App/Company');
+        return $this->belongsTo('App\Company');
     }
 
     /**
@@ -40,6 +40,6 @@ class Game extends Model
      */
     public function publisher()
     {
-        return $this->belongsTo('App/Publisher');
+        return $this->belongsTo('App\Publisher');
     }
 }
