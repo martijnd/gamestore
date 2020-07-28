@@ -10,17 +10,17 @@ use function Pest\Laravel\post;
 it('retrieves the user', function () {
     $user = factory(User::class)->create();
 
-    get('api/users/'.$user->id)->assertOk();
+    get('api/v1/users/'.$user->id)->assertOk();
 });
 
-it('stores the user', function() {
+it('stores the user', function () {
     $user = [
         'name' => faker()->name,
         'email' => faker()->email,
         'password'=> faker()->password
     ];
 
-    post('/api/users', $user)
+    post('/api/v1/users', $user)
         ->assertStatus(201)
         ->assertJson([
             'name' => $user['name'],
