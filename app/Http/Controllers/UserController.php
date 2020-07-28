@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\User;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
@@ -27,7 +28,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        return User::create($request->input());
+        return response(User::create($request->input()));
     }
 
     /**
