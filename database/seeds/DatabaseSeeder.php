@@ -1,8 +1,7 @@
 <?php
 
-namespace Seeders;
-
 use Illuminate\Database\Seeder;
+use Seeders\GameSeeder;
 
 class DatabaseSeeder extends Seeder
 {
