@@ -28,18 +28,18 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        return response(User::create($request->input()));
+        return response(User::create($request->input()), 201);
     }
 
     /**
      * Display the specified resource.
      *
      * @param User $user
-     * @return User
+     * @return Response
      */
     public function show(User $user)
     {
-        return $user;
+        return response($user);
     }
 
     /**
@@ -47,13 +47,13 @@ class UserController extends Controller
      *
      * @param Request $request
      * @param User $user
-     * @return User
+     * @return Response
      */
     public function update(Request $request, User $user)
     {
         $user->update($request->input());
 
-        return $user;
+        return response($user);
     }
 
     /**
