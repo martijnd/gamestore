@@ -2,12 +2,10 @@
 
 namespace App;
 
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-/**
- * Class User
- */
 class User extends Authenticatable
 {
     use Notifiable;
@@ -18,9 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        'name', 'email', 'password',
     ];
 
     /**
@@ -29,8 +25,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password',
-        'remember_token',
+        'password', 'remember_token',
     ];
 
     /**
@@ -38,18 +33,7 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $casts = ['email_verified_at' => 'datetime'];
-
-
-    /**
-     * Calculates the value.
-     *
-     * @param string $value The password.
-     *
-     * @return void
-     */
-    public function setPasswordAttribute(string $value)
-    {
-        $this->attributes['password'] = bcrypt($value);
-    }
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
 }

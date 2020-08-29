@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Seeders\GameSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,6 +11,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         $this->call(GameSeeder::class);
+        // $this->call(UserSeeder::class);
     }
 }
