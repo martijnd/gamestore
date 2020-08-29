@@ -20,3 +20,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('companies', 'CompanyController');
+Route::resource('games', 'GamesController');
+Route::resource('genres', 'GenreController');
+Route::resource('publishers', 'PublisherController');
+Route::resource('users', 'UserController');
