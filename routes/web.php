@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Auth::routes();
@@ -22,7 +22,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('companies', 'CompanyController');
-Route::resource('games', 'GamesController');
+Route::resource('games', 'GameController');
 Route::resource('genres', 'GenreController');
 Route::resource('publishers', 'PublisherController');
 Route::resource('users', 'UserController');

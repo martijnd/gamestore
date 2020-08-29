@@ -6,17 +6,19 @@ use App\Game;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\View\View;
 
 class GameController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return Response
+     * @return View
      */
     public function index()
     {
-        return response(Game::all());
+
+        return view('games.index', ['games' => Game::all()]);
     }
 
     /**
@@ -36,11 +38,11 @@ class GameController extends Controller
      * Display the specified resource.
      *
      * @param Game $game
-     * @return Response
+     * @return View
      */
     public function show(Game $game)
     {
-        return response($game);
+        return view('games.show', ['game' => $game]);
     }
 
     /**
