@@ -16,3 +16,7 @@ Route::prefix('v1')->group(function () {
     Route::apiResource('users', 'UserController');
     Route::apiResource('games', 'GameController');
 });
+
+Route::get('/', function () {
+        return  phpinfo();
+});
