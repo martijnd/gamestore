@@ -18,16 +18,20 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @livewireStyles
 </head>
 <body>
     <div id="app">
-        <nav class="p-4">
-            <a href="/">{{ config('app.name') }}</a>
+        <nav class="p-4 shadow-lg bg-blue-500 flex justify-between">
+            <a class="font-bold text-white italic" href="{{ route('home') }}">{{ config('app.name') }}</a>
+            @livewire('counter')
         </nav>
 
         <main class="py-4">
             @yield('content')
         </main>
+
+        @livewireScripts
     </div>
 </body>
 </html>
