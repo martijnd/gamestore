@@ -19,7 +19,7 @@ class CreateGamesTable extends Migration
             $table->foreignId('genre_id')->constrained();
             $table->foreignId('company_id')->constrained();
             $table->foreignId('publisher_id')->constrained();
-            $table->timestamp('release_date');
+            $table->timestamp('released_at');
             $table->integer('rating');
             $table->timestamps();
         });

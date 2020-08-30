@@ -4,9 +4,7 @@
     <div class="container mx-auto p-8">
         <ul>
 
-        @foreach($games as $game)
-            <li class="list-disc list-inside"><a href="{{ route('games.show', $game) }}">{{ $game->name }}</a></li>
-        @endforeach
+       @livewire('games-list')
         </ul>
     </div>
 @endsection

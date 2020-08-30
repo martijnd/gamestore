@@ -12,7 +12,7 @@ class Game extends Model
         'genre_id',
         'company_id',
         'publisher_id',
-        'release_date',
+        'released_at',
         'rating',
     ];
 

@@ -24,7 +24,6 @@
     <div id="app">
         <nav class="p-4 shadow-lg bg-blue-500 flex justify-between">
             <a class="font-bold text-white italic" href="{{ route('home') }}">{{ config('app.name') }}</a>
-            @livewire('counter')
         </nav>
 
         <main class="py-4">

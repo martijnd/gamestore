@@ -14,7 +14,7 @@ $factory->define(Game::class, function (Faker $faker) {
         'genre_id' => factory(Genre::class),
         'company_id' => factory(Company::class),
         'publisher_id' => factory(Publisher::class),
-        'release_date' => $faker->dateTimeBetween('-20 years'),
+        'released_at' => $faker->dateTimeBetween('-20 years'),
         'rating' => $faker->numberBetween(50, 100),
     ];
 });
