@@ -21,12 +21,12 @@
     @livewireStyles
 </head>
 <body>
-    <div id="app">
+    <div class="bg-gray-200 min-h-screen" id="app">
         <nav class="p-4 shadow-lg bg-blue-500 flex justify-between">
             <a class="font-bold text-white italic" href="{{ route('home') }}">{{ config('app.name') }}</a>
         </nav>
 
-        <main class="py-4">
+        <main class="container mx-auto py-8">
             @yield('content')
         </main>
 

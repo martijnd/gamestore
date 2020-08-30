@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Seeders\CompanySeeder;
 use Seeders\GameSeeder;
+use Seeders\GenreSeeder;
+use Seeders\PublisherSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,6 +15,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         $this->call(GameSeeder::class);
+        $this->call(GenreSeeder::class);
+        $this->call(CompanySeeder::class);
+        $this->call(PublisherSeeder::class);
+        $this->call(GameSeeder::class);
     }
 }

@@ -11,9 +11,9 @@ use Faker\Generator as Faker;
 $factory->define(Game::class, function (Faker $faker) {
     return [
         'name' => $faker->sentence(3),
-        'genre_id' => factory(Genre::class),
-        'company_id' => factory(Company::class),
-        'publisher_id' => factory(Publisher::class),
+        'genre_id' => Genre::all(['id'])->random(),
+        'company_id' => Company::all(['id'])->random(),
+        'publisher_id' => Publisher::all(['id'])->random(),
         'released_at' => $faker->dateTimeBetween('-20 years'),
         'rating' => $faker->numberBetween(50, 100),
     ];

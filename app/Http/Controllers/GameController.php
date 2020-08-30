@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Company;
 use App\Game;
+use App\Genre;
+use App\Publisher;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -22,6 +25,16 @@ class GameController extends Controller
     }
 
     /**
+     * Show the form for creating a new resource.
+     *
+     * @return View
+     */
+    public function create()
+    {
+        return view('games.create');
+    }
+
+    /**
      * Store a newly created resource in storage.
      *
      * @param Request $request
@@ -29,7 +42,10 @@ class GameController extends Controller
      */
     public function store(Request $request)
     {
-        $game = Game::create($request->input());
+        $game = Game::create($request->validate([
+            'name' => 'required|max:200',
+            'genre_id' => 'exists:genre'
+        ]));
 
         return response($game, 201);
     }
@@ -43,6 +59,17 @@ class GameController extends Controller
     public function show(Game $game)
     {
         return view('games.show', ['game' => $game]);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
     }
 
     /**
