@@ -1,8 +1,11 @@
 <x-layout>
-    <div class="bg-white p-8 rounded shadow-md">
-        <h1 class="font-bold text-2xl">Links</h1>
+    <div class="p-8">
+        <h1 class="font-bold text-2xl">Latest games</h1>
         <hr>
-
-        <a class="" href="{{route('games.index')}}">Games ({{ $games }})</a>
+        <ul class="mt-4">
+            @foreach($latestGames as $game)
+                <li><a href="{{route('games.show', $game)}}">{{$game->name}}, {{\Carbon\Carbon::parse($game->released_at)->diffForHumans()}}</a></li>
+            @endforeach
+        </ul>
     </div>
 </x-layout>

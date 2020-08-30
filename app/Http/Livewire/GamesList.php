@@ -19,7 +19,7 @@ class GamesList extends Component
     {
         return view('livewire.games-list', [
             'games' => Game::with(['company', 'genre', 'publisher'])
-                ->where('name', 'LIKE', "%{$this->search}%")
+                ->where('name', 'LIKE', "%{$this->search}%")->paginate(20)
         ]);
     }
 }

@@ -1,7 +1,7 @@
-@extends('layouts.app')
+<x-layout>
 
-@section('content')
     <div>
         {{ $game->name }}
     </div>
-@endsection
+
+</x-layout>

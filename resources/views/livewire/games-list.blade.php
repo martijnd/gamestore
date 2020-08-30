@@ -9,8 +9,8 @@
     <a class="bg-purple-500 text-white font-bold rounded shadow py-2 px-4"
        href="{{ route('games.create') }}">Create game</a>
     </div>
-    <div class="flex">
-        {{ $games->count() }} results
+    <div class="flex mt-4">
+        {{ $games->total() }} results
     </div>
     <table class="table-auto">
         <thead>
@@ -24,7 +24,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($games->paginate(20) as $game)
+            @foreach($games as $game)
                 <tr @if($loop->even) class="bg-gray-100" @endif }}>
                     <td class="border px-4 py-2">{{ $game->name }}</td>
                     <td class="border px-4 py-2">{{ $game->genre->name }}</td>

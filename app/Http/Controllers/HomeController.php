@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Game;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
@@ -23,8 +24,12 @@ class HomeController extends Controller
      */
     public function __invoke()
     {
+
         return view('home', [
-            'games' => Game::all()->count()
+            'latestGames' => Game::query()
+                ->where('released_at', '>', Carbon::parse('2 years ago'))
+                ->orderBy('released_at', 'desc')
+                ->get()
         ]);
     }
 }

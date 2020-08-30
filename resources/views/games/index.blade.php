@@ -1,6 +1,6 @@
 <x-layout>
 
-    <div class="container mx-auto p-8 bg-white">
+    <div class="container mx-auto p-8">
 
         @livewire('games-list')
 
