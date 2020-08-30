@@ -181,7 +181,7 @@ class CompanySeeder extends Seeder
             "Double Fine Productions",
             "Dynamix",
             "Dovetail Games",
-            "<a href=\"/wiki/The_Dovetail_Group\" title=\"The Dovetail Group\">The Dovetail Group</a>",
+            "The Dovetail Group",
             "EA Black Box",
             "EA Digital Illusions CE",
             "EA Gothenburg",

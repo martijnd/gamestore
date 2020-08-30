@@ -1,4 +1,17 @@
 <div>
+    <div class="flex justify-between">
+    <input
+        class="form-input w-1/2"
+        wire:model="search"
+        type="text"
+        placeholder="search"
+    >
+    <a class="bg-purple-500 text-white font-bold rounded shadow py-2 px-4"
+       href="{{ route('games.create') }}">Create game</a>
+    </div>
+    <div class="flex">
+        {{ $games->count() }} results
+    </div>
     <table class="table-auto">
         <thead>
             <tr>
@@ -6,12 +19,12 @@
                 <th class="px-4 py-2">Genre</th>
                 <th class="px-4 py-2">Company</th>
                 <th class="px-4 py-2">Publisher</th>
-                <th class="px-4 py-2">Release data</th>
+                <th class="px-4 py-2">Release date</th>
                 <th class="px-4 py-2">Actions</th>
             </tr>
         </thead>
         <tbody>
-            @foreach($games as $game)
+            @foreach($games->paginate(20) as $game)
                 <tr @if($loop->even) class="bg-gray-100" @endif }}>
                     <td class="border px-4 py-2">{{ $game->name }}</td>
                     <td class="border px-4 py-2">{{ $game->genre->name }}</td>

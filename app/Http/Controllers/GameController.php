@@ -21,7 +21,7 @@ class GameController extends Controller
     public function index()
     {
 
-        return view('games.index', ['games' => Game::all()]);
+        return view('games.index');
     }
 
     /**
@@ -31,23 +31,30 @@ class GameController extends Controller
      */
     public function create()
     {
-        return view('games.create');
+        return view('games.create', [
+            'genres' => Genre::all(),
+            'companies' => Company::all(),
+            'publishers' => Publisher::all()
+        ]);
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param Request $request
-     * @return Response
+     * @return View
      */
     public function store(Request $request)
     {
-        $game = Game::create($request->validate([
+        Game::create($request->validate([
             'name' => 'required|max:200',
-            'genre_id' => 'exists:genre'
+            'genre_id' => 'required|exists:genres,id',
+            'company_id' => 'required|exists:companies,id',
+            'publisher_id' => 'required|exists:publishers,id',
+            'rating' => 'required|numeric|between:1,100',
         ]));
 
-        return response($game, 201);
+        return view('games.index');
     }
 
     /**
