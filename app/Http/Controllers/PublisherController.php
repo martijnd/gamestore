@@ -21,7 +21,7 @@ class PublisherController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
+     * @param  Request $request
      * @return Response
      */
     public function store(Request $request)
@@ -32,7 +32,7 @@ class PublisherController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param Publisher $publisher
+     * @param  Publisher $publisher
      * @return Response
      */
     public function show(Publisher $publisher)
@@ -43,8 +43,8 @@ class PublisherController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
-     * @param Publisher $publisher
+     * @param  Request   $request
+     * @param  Publisher $publisher
      * @return Response
      */
     public function update(Request $request, Publisher $publisher)
@@ -55,7 +55,7 @@ class PublisherController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param Publisher $publisher
+     * @param  Publisher $publisher
      * @return Response
      */
     public function destroy(Publisher $publisher)

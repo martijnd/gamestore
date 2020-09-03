@@ -14,7 +14,8 @@ class GenreSeeder extends Seeder
      */
     public function run()
     {
-        $titles = collect([
+        $titles = collect(
+            [
             "Platformer",
             "Shooter",
             "Fighting",
@@ -63,10 +64,15 @@ class GenreSeeder extends Seeder
             "Art game",
             "Educational game",
             "Exergame"
-        ]);
+            ]
+        );
 
-        $titles->map(fn ($title) => factory(Genre::class)->create([
-            'name' => $title
-        ]));
+        $titles->map(
+            fn ($title) => factory(Genre::class)->create(
+                [
+                'name' => $title
+                ]
+            )
+        );
     }
 }

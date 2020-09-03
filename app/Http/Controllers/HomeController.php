@@ -25,11 +25,13 @@ class HomeController extends Controller
     public function __invoke()
     {
 
-        return view('home', [
+        return view(
+            'home', [
             'latestGames' => Game::query()
                 ->where('released_at', '>', Carbon::parse('2 years ago'))
                 ->orderBy('released_at', 'desc')
                 ->get()
-        ]);
+            ]
+        );
     }
 }

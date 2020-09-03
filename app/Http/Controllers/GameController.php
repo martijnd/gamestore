@@ -31,28 +31,34 @@ class GameController extends Controller
      */
     public function create()
     {
-        return view('games.create', [
+        return view(
+            'games.create', [
             'genres' => Genre::all(),
             'companies' => Company::all(),
             'publishers' => Publisher::all()
-        ]);
+            ]
+        );
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
+     * @param  Request $request
      * @return View
      */
     public function store(Request $request)
     {
-        Game::create($request->validate([
-            'name' => 'required|max:200',
-            'genre_id' => 'required|exists:genres,id',
-            'company_id' => 'required|exists:companies,id',
-            'publisher_id' => 'required|exists:publishers,id',
-            'rating' => 'required|numeric|between:1,100',
-        ]));
+        Game::create(
+            $request->validate(
+                [
+                'name' => 'required|max:200',
+                'genre_id' => 'required|exists:genres,id',
+                'company_id' => 'required|exists:companies,id',
+                'publisher_id' => 'required|exists:publishers,id',
+                'rating' => 'required|numeric|between:1,100',
+                ]
+            )
+        );
 
         return view('games.index');
     }
@@ -60,7 +66,7 @@ class GameController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param Game $game
+     * @param  Game $game
      * @return View
      */
     public function show(Game $game)
@@ -71,7 +77,7 @@ class GameController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -82,8 +88,8 @@ class GameController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
-     * @param Game $game
+     * @param  Request $request
+     * @param  Game    $game
      * @return Response
      */
     public function update(Request $request, Game $game)
@@ -96,7 +102,7 @@ class GameController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param Game $game
+     * @param  Game $game
      * @return Response
      * @throws Exception
      */

@@ -20,6 +20,7 @@ class Game extends Model
 
     /**
      * Define the genre relation.
+     *
      * @return BelongsTo
      */
     public function genre()
@@ -29,6 +30,7 @@ class Game extends Model
 
     /**
      * Define the company relation.
+     *
      * @return BelongsTo
      */
     public function company()
@@ -38,6 +40,7 @@ class Game extends Model
 
     /**
      * Define the publisher relation.
+     *
      * @return BelongsTo
      */
     public function publisher()

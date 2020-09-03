@@ -21,7 +21,7 @@ class GenreController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
+     * @param  Request $request
      * @return Response
      */
     public function store(Request $request)
@@ -32,7 +32,7 @@ class GenreController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param Genre $genre
+     * @param  Genre $genre
      * @return Response
      */
     public function show(Genre $genre)
@@ -43,8 +43,8 @@ class GenreController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
-     * @param Genre $genre
+     * @param  Request $request
+     * @param  Genre   $genre
      * @return Response
      */
     public function update(Request $request, Genre $genre)
@@ -55,7 +55,7 @@ class GenreController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param Genre $genre
+     * @param  Genre $genre
      * @return Response
      */
     public function destroy(Genre $genre)

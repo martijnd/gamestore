@@ -14,7 +14,8 @@ class GameSeeder extends Seeder
      */
     public function run()
     {
-        $gameTitles = collect([
+        $gameTitles = collect(
+            [
             "Snoopy",
             "Fraxxon",
             "Hopper",
@@ -127,10 +128,15 @@ class GameSeeder extends Seeder
             "We Were Here Together",
             "Tannenberg",
             "Good Job!"
-        ]);
+            ]
+        );
 
-        $gameTitles->map(fn ($name) => factory(Game::class)->create([
-            'name' => $name
-        ]));
+        $gameTitles->map(
+            fn ($name) => factory(Game::class)->create(
+                [
+                'name' => $name
+                ]
+            )
+        );
     }
 }

@@ -14,7 +14,8 @@ class PublisherSeeder extends Seeder
      */
     public function run()
     {
-        $publishers = collect([
+        $publishers = collect(
+            [
             "07th Expansion",
             "11 bit studios",
             "1C Company",
@@ -866,10 +867,15 @@ class PublisherSeeder extends Seeder
             "Zushi Games",
             "Zynga",
             "ZyX"
-        ]);
+            ]
+        );
 
-        $publishers->map(fn ($name) => factory(Publisher::class)->create([
-            'name' => $name
-        ]));
+        $publishers->map(
+            fn ($name) => factory(Publisher::class)->create(
+                [
+                'name' => $name
+                ]
+            )
+        );
     }
 }

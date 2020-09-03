@@ -13,16 +13,18 @@ class CreateGamesTable extends Migration
      */
     public function up()
     {
-        Schema::create('games', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->foreignId('genre_id')->constrained();
-            $table->foreignId('company_id')->constrained();
-            $table->foreignId('publisher_id')->constrained();
-            $table->timestamp('released_at');
-            $table->integer('rating');
-            $table->timestamps();
-        });
+        Schema::create(
+            'games', function (Blueprint $table) {
+                $table->id();
+                $table->string('name');
+                $table->foreignId('genre_id')->constrained();
+                $table->foreignId('company_id')->constrained();
+                $table->foreignId('publisher_id')->constrained();
+                $table->timestamp('released_at');
+                $table->integer('rating');
+                $table->timestamps();
+            }
+        );
     }
 
     /**

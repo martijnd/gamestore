@@ -14,7 +14,8 @@ class CompanySeeder extends Seeder
      */
     public function run()
     {
-        $companies = collect([
+        $companies = collect(
+            [
             "0verflow",
             "11 bit studios",
             "1C Company",
@@ -690,10 +691,15 @@ class CompanySeeder extends Seeder
             "Zombie Studios",
             "ZootFly",
             "Zynga"
-        ]);
+            ]
+        );
 
-        $companies->map(fn ($name) => factory(Company::class)->create([
-            'name' => $name
-        ]));
+        $companies->map(
+            fn ($name) => factory(Company::class)->create(
+                [
+                'name' => $name
+                ]
+            )
+        );
     }
 }
