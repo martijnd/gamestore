@@ -10,9 +10,3 @@ namespace Tests\Feature;
 
      $response->assertSee('Latest games');
  });
-
- it('tests the api', function () {
-    authenticate();
-    $response = getJson('/api/games');
-    $response->assertStatus(200);
- });

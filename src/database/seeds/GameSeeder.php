@@ -2,7 +2,10 @@
 
 namespace Seeders;
 
+use App\Company;
 use App\Game;
+use App\Genre;
+use App\Publisher;
 use Illuminate\Database\Seeder;
 
 class GameSeeder extends Seeder
@@ -134,7 +137,10 @@ class GameSeeder extends Seeder
         $gameTitles->map(
             fn ($name) => factory(Game::class)->create(
                 [
-                'name' => $name
+                'name' => $name,
+                'genre_id' => Genre::all(['id'])->random(),
+                'company_id' => Company::all(['id'])->random(),
+                'publisher_id' => Publisher::all(['id'])->random(),
                 ]
             )
         );

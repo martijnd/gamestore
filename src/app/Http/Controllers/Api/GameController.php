@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Game;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CreateGameRequest;
 use Illuminate\Http\Request;
 
 class GameController extends Controller
@@ -21,23 +22,27 @@ class GameController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param CreateGameRequest $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateGameRequest $request)
     {
-        //
+        return response(
+            Game::create(
+                $request->validated()
+            ), 201
+        );
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param Game $game
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Game $game)
     {
-        //
+        return response($game);
     }
 
     /**
