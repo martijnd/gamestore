@@ -17,6 +17,7 @@ class CreateGamesTable extends Migration
             'games', function (Blueprint $table) {
                 $table->id();
                 $table->string('name');
+                $table->foreignId('user_id')->constrained();
                 $table->foreignId('genre_id')->constrained();
                 $table->foreignId('company_id')->constrained();
                 $table->foreignId('publisher_id')->constrained();
