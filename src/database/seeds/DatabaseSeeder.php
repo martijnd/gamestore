@@ -5,6 +5,7 @@ use Seeders\CompanySeeder;
 use Seeders\GameSeeder;
 use Seeders\GenreSeeder;
 use Seeders\PublisherSeeder;
+use Seeders\UserSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -19,5 +20,6 @@ class DatabaseSeeder extends Seeder
         $this->call(CompanySeeder::class);
         $this->call(PublisherSeeder::class);
         $this->call(GameSeeder::class);
+        $this->call(UserSeeder::class);
     }
 }

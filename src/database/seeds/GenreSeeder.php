@@ -42,7 +42,7 @@ class GenreSeeder extends Seeder
             "Artillery",
             "Real-time strategy (RTS)",
             "Real-time tactics (RTT)",
-            "Multiplayer online&nbsp;battle arena (MOBA)",
+            "Multiplayer online battle arena (MOBA)",
             "Tower defense",
             "Turn-based strategy (TBS)",
             "Turn-based tactics (TBT)",
