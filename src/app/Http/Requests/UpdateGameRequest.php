@@ -2,9 +2,8 @@
 
 namespace App\Http\Requests;
 
-use App\Game;
-use Gate;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Gate;
 
 class UpdateGameRequest extends FormRequest
 {

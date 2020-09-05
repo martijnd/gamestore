@@ -34,8 +34,10 @@ class GameController extends Controller
     public function store(CreateGameRequest $request)
     {
         return response(
-            Auth::user()->games()->create($request->validated()
-            ), 201
+            Auth::user()->games()->create(
+                $request->validated()
+            ),
+            201
         );
     }
 
@@ -69,6 +71,7 @@ class GameController extends Controller
      * @param DeleteGameRequest $request
      * @param Game $game
      * @return Response
+     * @throws \Exception
      */
     public function destroy(DeleteGameRequest $request, Game $game)
     {
