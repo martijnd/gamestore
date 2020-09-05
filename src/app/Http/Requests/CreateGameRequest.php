@@ -15,11 +15,11 @@ class CreateGameRequest extends FormRequest
     {
         return [
             'name' => 'required|string',
-            'genre_id' => 'numeric|exists:genres,id',
-            'company_id' => 'numeric|exists:companies,id',
-            'publisher_id' => 'numeric|exists:publishers,id',
+            'genre_id' => 'required|numeric|exists:genres,id',
+            'company_id' => 'required|numeric|exists:companies,id',
+            'publisher_id' => 'required|numeric|exists:publishers,id',
             'released_at' => 'required|date',
-            'rating' => 'required|between:1,100',
+            'rating' => 'required|numeric|between:1,100',
         ];
     }
 }

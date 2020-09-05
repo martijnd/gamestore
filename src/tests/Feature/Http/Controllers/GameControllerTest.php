@@ -1,7 +1,6 @@
 <?php
 
 use App\Game;
-use App\Genre;
 use function Pest\Laravel\assertDatabaseHas;
 use function Pest\Laravel\getJson;
 use function Pest\Laravel\postJson;
@@ -32,7 +31,7 @@ it('stores a new game', function () {
    ]);
 });
 
-it('validated the input', function () {
+it('validates the input', function () {
     $game = factory(Game::class)->make()->toArray();
     $game['name'] = 2;
     $game['rating'] = 101;
@@ -40,8 +39,8 @@ it('validated the input', function () {
     postJson('/api/games', $game)
         ->assertJson(['message' => 'The given data was invalid.'])
         ->assertJsonValidationErrors([
-            "name" => "The name must be a string",
-            'rating' => "The rating field is required."
+            "name" => "The name must be a string.",
+            'rating' => "The rating must be between 1 and 100."
         ]);
 
 });
