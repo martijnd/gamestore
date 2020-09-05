@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html class="overflow-y-scroll" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,10 +30,12 @@
         <div class="auth mt-2">
             @auth
                 <form action="{{route('logout')}}" method="post">
-                    <button class="px-4 py-2 bg-purple-500 text-white font-semibold rounded" type="submit">Sign out</button>
+                    <button class="px-4 py-2 bg-purple-500 text-white font-semibold rounded" type="submit">Sign out
+                    </button>
                 </form>
             @elseguest
-                <a class="px-4 py-2 text-purple-500 border border-purple-500 mr-2 hover:bg-purple-100 font-semibold rounded" href="{{route('login')}}">Log in</a>
+                <a class="px-4 py-2 text-purple-500 border border-purple-500 mr-2 hover:bg-purple-100 font-semibold rounded"
+                   href="{{route('login')}}">Log in</a>
                 <a class="px-4 py-2 bg-purple-500 text-white font-semibold rounded" href="{{route('register')}}">Register</a>
             @endauth
         </div>
