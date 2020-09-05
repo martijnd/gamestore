@@ -25,5 +25,5 @@ mix.browserSync({
     ui: false,
     injectChanges: true,
     notify: false,
-    proxy: '127.0.0.1:8000',
+    proxy: '127.0.0.1:4200',
 });

@@ -5,6 +5,7 @@ use Seeders\CompanySeeder;
 use Seeders\GameSeeder;
 use Seeders\GenreSeeder;
 use Seeders\PublisherSeeder;
+use Seeders\UserSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,6 +16,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(UserSeeder::class);
         $this->call(GenreSeeder::class);
         $this->call(CompanySeeder::class);
         $this->call(PublisherSeeder::class);

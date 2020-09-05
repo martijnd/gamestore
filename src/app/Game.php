@@ -6,17 +6,29 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Facades\Auth;
 
 class Game extends Model
 {
     protected $fillable = [
         'name',
+        'user_id',
         'genre_id',
         'company_id',
         'publisher_id',
         'released_at',
         'rating',
     ];
+
+    /**
+     * Define the user relation.
+     *
+     * @return BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 
     /**
      * Define the genre relation.

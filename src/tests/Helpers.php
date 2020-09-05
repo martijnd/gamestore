@@ -2,10 +2,15 @@
 
 namespace Tests;
 
+use App\User;
+use Laravel\Sanctum\Sanctum;
+
 /**
- * A basic assert example.
+ * @return User|\Illuminate\Contracts\Auth\Authenticatable|\Laravel\Sanctum\HasApiTokens
  */
-function assertExample(): void
-{
-    test()->assertTrue(true);
+function authenticate() {
+    return Sanctum::actingAs(
+        factory(User::class)->create(),
+        ['*']
+    );
 }

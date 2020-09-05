@@ -2,10 +2,10 @@
     <div class="p-8">
         <h1 class="font-bold text-2xl">Latest games</h1>
         <hr>
-        <ul class="mt-4">
+        <div class="flex flex-wrap">
             @foreach($latestGames as $game)
-                <li><a href="{{route('games.show', $game)}}">{{$game->name}}, {{\Carbon\Carbon::parse($game->released_at)->diffForHumans()}}</a></li>
+                <x-game-card :game="$game"/>
             @endforeach
-        </ul>
+        </div>
     </div>
 </x-layout>
