@@ -6,6 +6,7 @@ use App\Company;
 use App\Game;
 use App\Genre;
 use App\Publisher;
+use Auth;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -20,7 +21,6 @@ class GameController extends Controller
      */
     public function index()
     {
-
         return view('games.index');
     }
 
@@ -32,7 +32,8 @@ class GameController extends Controller
     public function create()
     {
         return view(
-            'games.create', [
+            'games.create',
+            [
             'genres' => Genre::all(),
             'companies' => Company::all(),
             'publishers' => Publisher::all()
@@ -48,7 +49,7 @@ class GameController extends Controller
      */
     public function store(Request $request)
     {
-        Game::create(
+        Auth::user()->games()->create(
             $request->validate(
                 [
                 'name' => 'required|max:200',
