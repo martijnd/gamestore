@@ -9,10 +9,10 @@ use function Pest\Laravel\deleteJson;
 use function Pest\Laravel\getJson;
 use function Pest\Laravel\patchJson;
 use function Pest\Laravel\postJson;
-use function Tests\authenticate;
+use function Tests\authenticateWithSanctum;
 
 beforeEach(function () {
-    $this->user = authenticate();
+    $this->user = authenticateWithSanctum();
 });
 
 it('retrieves a list of games', function () {

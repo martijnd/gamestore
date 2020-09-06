@@ -2,11 +2,12 @@
 
 namespace Tests\Feature;
 
- use function Pest\Laravel\getJson;
- use function Tests\authenticate;
+ use function Pest\Laravel\get;
+ use function Tests\login;
 
  it('tests the homepage', function () {
-     $response = $this->get('/');
+     login();
+     $response = get('/');
 
      $response->assertSee('Latest games');
  });
