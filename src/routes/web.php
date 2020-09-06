@@ -13,12 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'HomeController')->name('home');
 
 Auth::routes();
 
-Route::resource('companies', 'CompanyController');
-Route::resource('games', 'GameController');
-Route::resource('genres', 'GenreController');
-Route::resource('publishers', 'PublisherController');
-Route::resource('users', 'UserController');
+Route::middleware('auth:web')->group(function () {
+    Route::get('/', 'HomeController')->name('home');
+    Route::resource('companies', 'CompanyController');
+    Route::resource('games', 'GameController');
+    Route::resource('genres', 'GenreController');
+    Route::resource('publishers', 'PublisherController');
+    Route::resource('users', 'UserController');
+});
