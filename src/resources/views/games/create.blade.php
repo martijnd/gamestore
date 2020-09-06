@@ -1,7 +1,4 @@
-@extends('layouts.app')
-
-@section('content')
-
+<x-layout>
     <h1 class="pb-4 text-blue-900 font-bold text-2xl">Create a new game</h1>
     <form class="flex mt-4 rounded" method="POST" action="{{ route('games.store') }}">
         @csrf
@@ -30,7 +27,8 @@
                 >
                     <option value="false" @if(! old('genre_id')) selected @endif disabled>Select a genre...</option>
                     @foreach($genres as $genre)
-                        <option value="{{ $genre->id }}" @if(old('genre_id') == $genre->id) selected @endif>{{ $genre->name }}</option>
+                        <option value="{{ $genre->id }}"
+                                @if(old('genre_id') == $genre->id) selected @endif>{{ $genre->name }}</option>
                     @endforeach
                 </select>
             </div>
@@ -44,7 +42,8 @@
                 >
                     <option value="false" selected disabled>Select a company...</option>
                     @foreach($companies as $company)
-                        <option value="{{ $company->id }}" @if(old('company_id') == $company->id) selected @endif>{{ $company->name }}</option>
+                        <option value="{{ $company->id }}"
+                                @if(old('company_id') == $company->id) selected @endif>{{ $company->name }}</option>
                     @endforeach
                 </select>
             </div>
@@ -56,9 +55,10 @@
                         name="publisher_id"
                         type="text"
                 >
-                        <option value="false" selected disabled>Select a publisher...</option>
+                    <option value="false" selected disabled>Select a publisher...</option>
                     @foreach($publishers as $publisher)
-                        <option value="{{ $publisher->id }}" @if(old('publisher_id') == $publisher->id) selected @endif>{{ $publisher->name }}</option>
+                        <option value="{{ $publisher->id }}"
+                                @if(old('publisher_id') == $publisher->id) selected @endif>{{ $publisher->name }}</option>
                     @endforeach
                 </select>
             </div>
@@ -85,11 +85,9 @@
             @endif
 
             <div class="flex justify-end">
-                <button class="bg-purple-500 text-white font-bold rounded shadow py-2 px-8" type="submit">Save new game</button>
+                <button class="bg-purple-500 text-white font-bold rounded shadow py-2 px-8" type="submit">Save new game
+                </button>
             </div>
         </div>
     </form>
-
-
-
-@endsection
+</x-layout>

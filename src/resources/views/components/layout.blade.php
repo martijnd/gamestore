@@ -30,13 +30,14 @@
         <div class="auth mt-2">
             @auth
                 <form action="{{route('logout')}}" method="post">
-                    <button class="px-4 py-2 bg-purple-500 text-white font-semibold rounded" type="submit">Sign out
+                    @csrf
+                    <button class="inline-block px-4 py-2 bg-purple-500 text-white font-semibold rounded" type="submit">Sign out
                     </button>
                 </form>
             @elseguest
-                <a class="px-4 py-2 text-purple-500 border border-purple-500 mr-2 hover:bg-purple-100 font-semibold rounded"
+                <a class="inline-block px-4 py-2 text-purple-500 border border-purple-500 mr-2 hover:bg-purple-100 font-semibold rounded"
                    href="{{route('login')}}">Log in</a>
-                <a class="px-4 py-2 bg-purple-500 text-white font-semibold rounded" href="{{route('register')}}">Register</a>
+                <a class="inline-block px-4 py-2 bg-purple-500 text-white font-semibold rounded" href="{{route('register')}}">Register</a>
             @endauth
         </div>
     </nav>
