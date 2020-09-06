@@ -61,7 +61,6 @@ it('retrieves a newly created game', function () {
     // Retrieve it again
     getJson('/api/games/' . $response['id'])
         ->assertOk();
-
 });
 
 it('updates a game', function () {
@@ -93,7 +92,6 @@ it("prevents a user to delete another user's game", function () {
 
     deleteJson('/api/games/'.$game->id)
     ->assertForbidden();
-
 });
 
 it('deletes a game', function () {
