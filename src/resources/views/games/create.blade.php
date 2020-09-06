@@ -85,7 +85,7 @@
             @endif
 
             <div class="flex justify-end">
-                <button class="bg-purple-500 text-white font-bold rounded shadow py-2 px-8" type="submit">Save new game
+                <button class="bg-purple-500 text-white font-bold rounded shadow py-2 px-8" type="submit" dusk="save-new-game-button">Save new game
                 </button>
             </div>
         </div>

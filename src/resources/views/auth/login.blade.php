@@ -56,7 +56,9 @@
             </div>
 
             <div class="mt-4 flex justify-between">
-                <button class="inline-block uppercase text-xl tracking-wide font-bold px-4 py-2 text-purple-500 bg-white hover:bg-purple-100 hover:shadow-lg transition-all duration-150 font-semibold rounded" type="submit">
+                <button class="inline-block uppercase text-xl tracking-wide font-bold px-4 py-2 text-purple-500 bg-white hover:bg-purple-100 hover:shadow-lg transition-all duration-150 font-semibold rounded"
+                        dusk="login-button"
+                        type="submit">
                     Log in
                 </button>
 
