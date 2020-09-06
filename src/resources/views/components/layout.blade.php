@@ -24,19 +24,20 @@
 <div class="min-h-screen" id="app">
     <nav class="py-4 px-6 flex justify-between text-purple-500 shadow">
         <a class="text-xl font-bold" href="{{ route('home') }}">{{ config('app.name') }}</a>
-        <div class="links text-xl font-semibold italic ml-8">
+        <div class="links text-xl font-semibold italic">
             <a href="{{route('games.index')}}">Games</a>
         </div>
         <div class="auth mt-2">
             @auth
                 <form action="{{route('logout')}}" method="post">
-                    <button class="px-4 py-2 bg-purple-500 text-white font-semibold rounded" type="submit">Sign out
+                    @csrf
+                    <button class="text-purple-500 font-semibold hover:underline" type="submit">Sign out
                     </button>
                 </form>
             @elseguest
-                <a class="px-4 py-2 text-purple-500 border border-purple-500 mr-2 hover:bg-purple-100 font-semibold rounded"
+                <a class="inline-block px-4 py-2 text-purple-500 border border-purple-500 mr-2 hover:bg-purple-100 font-semibold rounded"
                    href="{{route('login')}}">Log in</a>
-                <a class="px-4 py-2 bg-purple-500 text-white font-semibold rounded" href="{{route('register')}}">Register</a>
+                <a class="inline-block px-4 py-2 bg-purple-500 text-white font-semibold rounded" href="{{route('register')}}">Register</a>
             @endauth
         </div>
     </nav>
