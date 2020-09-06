@@ -10,7 +10,7 @@
 
             <input id="email"
                    type="email"
-                   class="bg-purple-100 mt-2 block w-full form-input @error('email') border border-red-400 @enderror"
+                   class="mt-2 block w-full form-input @error('email') border border-red-400 @enderror"
                    name="email"
                    placeholder="E-mail"
                    value="{{ old('email') }}"
@@ -20,9 +20,9 @@
             >
 
             @error('email')
-            <span class="invalid-feedback" role="alert">
+            <div class="border mt-2 bg-red-200 border-red-400 p-4 rounded text-red-500" role="alert">
                 <strong>{{ $message }}</strong>
-            </span>
+            </div>
             @enderror
 
             <div class="mt-4">
@@ -32,16 +32,16 @@
                     <input id="password"
                            type="password"
                            placeholder="Password"
-                           class="bg-purple-100 mt-2 block w-full form-input @error('password') border border-red-400 @enderror"
+                           class="mt-2 block w-full form-input @error('password') border border-red-400 @enderror"
                            name="password"
                            required
                            autocomplete="current-password"
                     >
 
                     @error('password')
-                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                    <div class="border mt-2 bg-red-200 border-red-400 p-4 rounded text-red-500" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </div>
                     @enderror
                 </div>
             </div>

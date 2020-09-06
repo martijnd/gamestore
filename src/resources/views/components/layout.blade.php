@@ -24,14 +24,14 @@
 <div class="min-h-screen" id="app">
     <nav class="py-4 px-6 flex justify-between text-purple-500 shadow">
         <a class="text-xl font-bold" href="{{ route('home') }}">{{ config('app.name') }}</a>
-        <div class="links text-xl font-semibold italic ml-8">
+        <div class="links text-xl font-semibold italic">
             <a href="{{route('games.index')}}">Games</a>
         </div>
         <div class="auth mt-2">
             @auth
                 <form action="{{route('logout')}}" method="post">
                     @csrf
-                    <button class="inline-block px-4 py-2 bg-purple-500 text-white font-semibold rounded" type="submit">Sign out
+                    <button class="text-purple-500 font-semibold hover:underline" type="submit">Sign out
                     </button>
                 </form>
             @elseguest
