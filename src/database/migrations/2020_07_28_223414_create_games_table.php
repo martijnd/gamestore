@@ -14,7 +14,8 @@ class CreateGamesTable extends Migration
     public function up()
     {
         Schema::create(
-            'games', function (Blueprint $table) {
+            'games',
+            function (Blueprint $table) {
                 $table->id();
                 $table->string('name');
                 $table->foreignId('user_id')->constrained();

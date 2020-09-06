@@ -7,7 +7,6 @@ use Illuminate\View\Component;
 
 class GameCard extends Component
 {
-
     public Game $game;
 
     public function __construct($game)

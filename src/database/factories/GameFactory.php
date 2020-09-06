@@ -12,7 +12,8 @@ use App\User;
 use Faker\Generator as Faker;
 
 $factory->define(
-    Game::class, function (Faker $faker) {
+    Game::class,
+    function (Faker $faker) {
         return [
         'name' => $faker->sentence(3),
         'user_id' => factory(User::class)->lazy(),
