@@ -1,18 +1,21 @@
 <?php
 
-/**
- * @var Factory $factory
- */
+namespace Database\Factories;
 
-use App\Genre;
-use Faker\Generator as Faker;
-use Illuminate\Database\Eloquent\Factory;
+use App\Models\Genre;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-$factory->define(
-    Genre::class,
-    function (Faker $faker) {
+class GenreFactory extends Factory
+{
+    protected $model = Genre::class;
+
+    /**
+     * @return array
+     */
+    public function definition()
+    {
         return [
-        'name' => $faker->word()
+            'name' => $this->faker->word()
         ];
     }
-);
+}

@@ -2,7 +2,7 @@
 
 namespace Seeders;
 
-use App\Publisher;
+use App\Models\Publisher;
 use Illuminate\Database\Seeder;
 
 class PublisherSeeder extends Seeder
@@ -871,7 +871,7 @@ class PublisherSeeder extends Seeder
         );
 
         $publishers->map(
-            fn ($name) => factory(Publisher::class)->create(
+            fn ($name) => Publisher::factory()->create(
                 [
                 'name' => $name
                 ]

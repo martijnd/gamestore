@@ -1,7 +1,7 @@
 <?php
 
-use App\Game;
-use App\User;
+use App\Models\Game;
+use App\Models\User;
 use Laravel\Sanctum\Sanctum;
 use function Pest\Laravel\assertDatabaseHas;
 use function Pest\Laravel\assertDatabaseMissing;
@@ -21,13 +21,13 @@ it('retrieves a list of games', function () {
 });
 
 it('retrieves a single game', function () {
-    $game = factory(Game::class)->create();
+    $game = Game::factory()->create();
     getJson("/api/games/{$game->id}")
         ->assertOk();
 });
 
 it('stores a new game', function () {
-    $game = factory(Game::class)->make()->toArray();
+    $game = Game::factory()->make()->toArray();
     postJson('/api/games', $game)
         ->assertCreated();
 
@@ -37,7 +37,7 @@ it('stores a new game', function () {
 });
 
 it('validates the input', function () {
-    $game = factory(Game::class)->make()->toArray();
+    $game = Game::factory()->make()->toArray();
     $game['name'] = 2;
     $game['rating'] = 101;
 
@@ -51,7 +51,7 @@ it('validates the input', function () {
 
 it('retrieves a newly created game', function () {
     // Create the game
-    $game = factory(Game::class)->make();
+    $game = Game::factory()->make();
 
     // Send it to the endpoint
     $response = postJson('/api/games', $game->toArray())
@@ -65,7 +65,7 @@ it('retrieves a newly created game', function () {
 
 it('updates a game', function () {
     // Create the game
-    $game = factory(Game::class)->make();
+    $game = Game::factory()->make();
 
     // Send it to the endpoint
     $response = postJson('/api/games', $game->toArray())
@@ -84,9 +84,9 @@ it('updates a game', function () {
 
 it("prevents a user to delete another user's game", function () {
     // Create a user and his game
-    $game = factory(game::class)->create(['user_id' => $this->user->id]);
+    $game = game::factory()->create(['user_id' => $this->user->id]);
     // Create another user
-    $user2 = factory(User::class)->create();
+    $user2 = User::factory()->create();
 
     Sanctum::actingAs($user2);
 
@@ -96,7 +96,7 @@ it("prevents a user to delete another user's game", function () {
 
 it('deletes a game', function () {
     // Create a user and his game
-    $game = factory(game::class)->create(['user_id' => $this->user->id]);
+    $game = Game::factory()->create(['user_id' => $this->user->id]);
 
     // Delete the game
     deleteJson('/api/games/'.$game->id)

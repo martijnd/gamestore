@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire;
 
-use App\Game;
+use App\Models\Game;
 use Livewire\Component;
 
 class GamesList extends Component
