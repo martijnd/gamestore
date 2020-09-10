@@ -2,7 +2,7 @@
 
 namespace Seeders;
 
-use App\Company;
+use App\Models\Company;
 use Illuminate\Database\Seeder;
 
 class CompanySeeder extends Seeder
@@ -695,7 +695,7 @@ class CompanySeeder extends Seeder
         );
 
         $companies->map(
-            fn ($name) => factory(Company::class)->create(
+            fn ($name) => Company::factory()->create(
                 [
                 'name' => $name
                 ]

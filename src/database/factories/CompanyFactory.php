@@ -1,18 +1,21 @@
 <?php
 
-/**
- * @var Factory $factory
- */
+namespace Database\Factories;
 
-use App\Company;
-use Faker\Generator as Faker;
-use Illuminate\Database\Eloquent\Factory;
+use App\Models\Company;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-$factory->define(
-    Company::class,
-    function (Faker $faker) {
+class CompanyFactory extends Factory
+{
+    protected $model = Company::class;
+
+    /**
+     * @return array
+     */
+    public function definition()
+    {
         return [
-        'name' => $faker->company
+            'name' => $this->faker->company
         ];
     }
-);
+}

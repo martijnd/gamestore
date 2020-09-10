@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use App\User;
+use App\Models\User;
 use Laravel\Sanctum\Sanctum;
 use function Pest\Laravel\actingAs;
 
@@ -12,12 +12,12 @@ use function Pest\Laravel\actingAs;
 function authenticateWithSanctum()
 {
     return Sanctum::actingAs(
-        factory(User::class)->create(),
+        User::factory()->create(),
         ['*']
     );
 }
 
 function login()
 {
-    return actingAs(factory(User::class)->create());
+    return actingAs(User::factory()->create());
 }
