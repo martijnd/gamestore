@@ -30,7 +30,7 @@ class Game extends Model
      */
     public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\Models\User');
     }
 
     /**
@@ -40,7 +40,7 @@ class Game extends Model
      */
     public function genre()
     {
-        return $this->belongsTo('App\Genre');
+        return $this->belongsTo('App\Models\Genre');
     }
 
     /**
@@ -50,7 +50,7 @@ class Game extends Model
      */
     public function company()
     {
-        return $this->belongsTo('App\Company');
+        return $this->belongsTo('App\Models\Company');
     }
 
     /**
@@ -60,6 +60,6 @@ class Game extends Model
      */
     public function publisher()
     {
-        return $this->belongsTo('App\Publisher');
+        return $this->belongsTo('App\Models\Publisher');
     }
 }

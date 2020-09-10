@@ -74,7 +74,7 @@ it('updates a game', function () {
 
     // Update the game
     $response['name'] = 'Updated name';
-    patchJson('/api/games/' . $response['id'], $response)
+    patchJson("/api/games/{$response['id']}", $response->json())
         ->assertOk();
     // Check if it is changed
     $response = getJson('/api/games/' . $response['id'])
