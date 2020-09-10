@@ -1,15 +1,18 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Facades\Auth;
 
 class Game extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         'name',
         'user_id',
@@ -27,7 +30,7 @@ class Game extends Model
      */
     public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\Models\User');
     }
 
     /**
@@ -37,7 +40,7 @@ class Game extends Model
      */
     public function genre()
     {
-        return $this->belongsTo('App\Genre');
+        return $this->belongsTo('App\Models\Genre');
     }
 
     /**
@@ -47,7 +50,7 @@ class Game extends Model
      */
     public function company()
     {
-        return $this->belongsTo('App\Company');
+        return $this->belongsTo('App\Models\Company');
     }
 
     /**
@@ -57,6 +60,6 @@ class Game extends Model
      */
     public function publisher()
     {
-        return $this->belongsTo('App\Publisher');
+        return $this->belongsTo('App\Models\Publisher');
     }
 }

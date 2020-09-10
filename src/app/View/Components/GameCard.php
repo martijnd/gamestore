@@ -2,7 +2,7 @@
 
 namespace App\View\Components;
 
-use App\Game;
+use App\Models\Game;
 use Illuminate\View\Component;
 
 class GameCard extends Component

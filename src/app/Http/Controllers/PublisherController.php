@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Publisher;
+use App\Models\Publisher;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 

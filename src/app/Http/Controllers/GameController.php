@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Company;
-use App\Game;
-use App\Genre;
-use App\Publisher;
+use App\Models\Company;
+use App\Models\Game;
+use App\Models\Genre;
+use App\Models\Publisher;
 use Auth;
 use Exception;
 use Illuminate\Http\Request;

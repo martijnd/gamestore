@@ -2,11 +2,11 @@
 
 namespace Seeders;
 
-use App\Company;
-use App\Game;
-use App\Genre;
-use App\Publisher;
-use App\User;
+use App\Models\Company;
+use App\Models\Game;
+use App\Models\Genre;
+use App\Models\Publisher;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class GameSeeder extends Seeder
@@ -136,7 +136,7 @@ class GameSeeder extends Seeder
         );
 
         $gameTitles->map(
-            fn ($name) => factory(Game::class)->create(
+            fn ($name) => Game::factory()->create(
                 [
                 'name' => $name,
                 'user_id' => User::all(['id'])->random(),

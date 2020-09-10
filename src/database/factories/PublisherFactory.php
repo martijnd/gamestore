@@ -1,18 +1,21 @@
 <?php
 
-/**
- * @var Factory $factory
- */
+namespace Database\Factories;
 
-use App\Publisher;
-use Faker\Generator as Faker;
-use Illuminate\Database\Eloquent\Factory;
+use App\Models\Publisher;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-$factory->define(
-    Publisher::class,
-    function (Faker $faker) {
+class PublisherFactory extends Factory
+{
+    protected $model = Publisher::class;
+
+    /**
+     * @return array
+     */
+    public function definition()
+    {
         return [
-        'name' => $faker->word()
+            'name' => $this->faker->word()
         ];
     }
-);
+}

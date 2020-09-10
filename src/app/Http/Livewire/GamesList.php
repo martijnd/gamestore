@@ -2,15 +2,18 @@
 
 namespace App\Http\Livewire;
 
-use App\Game;
+use App\Models\Game;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class GamesList extends Component
 {
+    use WithPagination;
+
     public string $search = '';
 
     public function delete(int $id)
-    {
+    { 
         $game = Game::findOrFail($id);
         $game->delete();
     }
