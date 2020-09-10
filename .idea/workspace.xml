@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a326f55c-f23a-4aa3-8bc0-0784b43b44e0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.docker/mysql/init/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/mysql/init/init.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/.editorconfig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env.dusk.local" beforeDir="false" afterPath="$PROJECT_DIR$/.env.dusk.local" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.styleci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.styleci.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" afterDir="false" />
@@ -66,7 +67,6 @@
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_28_202557_create_genres_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_28_202557_create_genres_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_28_223414_create_games_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_28_223414_create_games_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/phpunit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/phpunit.xml" afterDir="false" />
@@ -396,6 +396,8 @@
       <workItem from="1599683449969" duration="4451000" />
       <workItem from="1599760972821" duration="4263000" />
       <workItem from="1599768687310" duration="359000" />
+      <workItem from="1599770223991" duration="19000" />
+      <workItem from="1599770249501" duration="28000" />
     </task>
     <servers />
   </component>
@@ -404,6 +406,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
     <state x="2506" y="520" key="#Inspections" timestamp="1599766030033">
@@ -419,10 +424,10 @@
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/1920.322.1920.1040@0.0.1920.1040" timestamp="1599683512178" />
     <state x="2660" y="596" key="FileChooserDialogImpl/0.0.1920.1040/1920.322.1920.1040@1920.322.1920.1040" timestamp="1599766262144" />
-    <state x="2381" y="486" key="SettingsEditor" timestamp="1599768891511">
+    <state x="2381" y="486" key="SettingsEditor" timestamp="1599770274007">
       <screen x="1920" y="322" width="1920" height="1040" />
     </state>
-    <state x="2381" y="486" key="SettingsEditor/0.0.1920.1040/1920.322.1920.1040@1920.322.1920.1040" timestamp="1599768891511" />
+    <state x="2381" y="486" key="SettingsEditor/0.0.1920.1040/1920.322.1920.1040@1920.322.1920.1040" timestamp="1599770274007" />
     <state x="2587" y="559" width="585" height="566" key="find.popup" timestamp="1599764111097">
       <screen x="1920" y="322" width="1920" height="1040" />
     </state>
