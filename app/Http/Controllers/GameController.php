@@ -45,7 +45,7 @@ class GameController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  Request $request
-     * @return View
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
@@ -61,7 +61,7 @@ class GameController extends Controller
             )
         );
 
-        return view('games.index');
+        return redirect()->route('games.index');
     }
 
     /**
@@ -91,13 +91,13 @@ class GameController extends Controller
      *
      * @param  Request $request
      * @param  Game    $game
-     * @return Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, Game $game)
     {
         $game->update($request->input());
 
-        return response($game);
+        return redirect()->route('games.show', ['game' => $game]);
     }
 
     /**

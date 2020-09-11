@@ -21,3 +21,7 @@ function login()
 {
     return actingAs(User::factory()->create());
 }
+
+function jsonHeaders() {
+    return ['Accept' => 'application/json', 'Content-Type' => 'application/json'];
+}
