@@ -6,4 +6,3 @@ RUN docker-php-ext-install pdo pdo_mysql
 RUN apk add --no-cache $PHPIZE_DEPS \
     && pecl install pcov \
     && docker-php-ext-enable pcov
-docker exec -it php php artisan test
